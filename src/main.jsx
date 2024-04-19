@@ -9,12 +9,18 @@ import {
 } from "react-router-dom";
 import Apps from './Apps';
 import App from './App'
+import Users from './Users';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Apps></Apps> ,
   },
+  {
+    path:'/users',
+    element: <Users></Users>,
+    loader: ()=>fetch('http://localhost:5004/users')
+  }
 ]);
 
 
