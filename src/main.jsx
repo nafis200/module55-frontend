@@ -8,8 +8,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Apps from './Apps';
-import App from './App'
 import Users from './Users';
+import Update from './Update';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +20,11 @@ const router = createBrowserRouter([
     path:'/users',
     element: <Users></Users>,
     loader: ()=>fetch('http://localhost:5004/users')
+  },
+  {
+    path: '/update/:id',
+    element: <Update></Update>,
+    loader: ({params})=> fetch(`http://localhost:5004/users/${params.id}`)
   }
 ]);
 
