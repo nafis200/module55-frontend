@@ -27,7 +27,7 @@ const Users = () => {
           <div>
             {
                 user.map(x => <p key={x._id}>{x.name}:{x.email} {x._id}
-                 <Link to={`/update/${x._id}`}>update</Link>
+                 <Link className="text-blue-500 font-bold text-2xl" to={`/update/${x._id}`}>update</Link>
                 <button className="btn"
                  onClick={()=>handleDelete(x._id)}
                 >X</button> </p>)
